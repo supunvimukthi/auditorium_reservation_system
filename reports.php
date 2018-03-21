@@ -50,7 +50,7 @@ if (isset($_GET['logout'])) {
  <?php
  $sql_query = "SELECT a.fname,alname,s.uid,s.date,s.time,s.packs,s.purpose,s.total,f.descrp,f.price,t.descrp,t.price,d.descrp,d.plus,d.price 
 from tb_reservation as s,tb_food as f,tb_technical as t,tb_deco as a,tb_customer as a WHERE s.fid=f.fid AND s.tid=t.tid AND s.did=d.did AND s.uid=a.email";
- $sql = $conn->prepare($sql_query);
+ $sql = $conn->prepare($sql_query); 
  $sql->execute();
  $numRows = $sql->fetchAll();
 
