@@ -1,0 +1,109 @@
+
+.reservationform.event a{
+    background: #2196f3 !important;
+    background-color: #42B373 !important;
+    background-image :none !important;
+    color: #ffffff !important;
+}
+
+
+* {box-sizing: border-box}
+
+
+
+
+ input[type=time], input[type=date], input[type=price]  {
+    width: 10%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	
+}
+
+select{
+	width: 10%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type=purpose]{
+    width: 400px;
+	height: 150px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+input[type=text]  {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+input[type=text]:focus  {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+
+.reservationform {
+    text-align: center;
+	border-style: outset;
+	border-color: #D3D3D3;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+    
+}
+
+
+table, th, td {
+    border: 3px solid #E80E89;
+    border-collapse: collapse;
+    margin-left: auto;
+	margin-right: auto;
+	
+}
+
+th{
+	color: #B93F90;
+}
+
+td{
+	color: #502F45;
+}
+/* Set a style for all buttons */
+button {
+  background-color: #2196f3;
+  color: white;
+  padding: 7px 10px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  opacity: 0.9;
+}
+
+
+h4{
+	color:#E80E89;
+}
+
+button:hover {
+  opacity:1;
+}
+
+

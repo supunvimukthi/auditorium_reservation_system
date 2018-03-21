@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+	img {
+    float: right;
+
+	}
+	
+.para1{
+	float:right;
+	width:550px;
+}
+
+
+.para2{
+	float:left;
+	width:620px;
+	margin-left:25px;
+}
+
+.para3{
+	float:right;
+	width:550px;
+}
+
+.para4{
+	float:left;
+	width:620px;
+	margin-left:25px;
+}
+
+.para5{
+	float:right;
+	width:550px;
+}
+
+h2{
+	color:#E80E89;
+}
+
+h3{
+	color:#B93F90;
+}
+
+p{
+	color:#502F45;
+}
+
+</style>
+</head>
+</html>
+	
+	
