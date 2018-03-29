@@ -98,7 +98,7 @@ if (isset($_GET['logout'])) {
          # Make the call to the client.
         $result = $mgClient->sendMessage("$domain",
             array('from' => 'Auditorium Reservation <postmaster@sandbox438699011a3542ab8c394ed404905852.mailgun.org>',
-                'to' => '<'.$email.'>',
+                'to' => 'Bhagya Amavi<bhagyaamavi7@gmail.com>',
                 'subject' => 'Reservation Confirmation',
                 'text' => "This is to confirm that your reservation on ".$date."-".$time." for ".$pax." people has been made for the purpose of ".$purpose.
                     " as stated by you.\r\n Food : ".$Fdesc." - ".(int)$Fprice*(int)$pax."\r\n Decoration : ".$Ddesc.$Dplus." - ".$Dprice."\r\n Technical : ".$Tdesc." - ".$Tprice."

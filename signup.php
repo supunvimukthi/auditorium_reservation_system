@@ -13,62 +13,62 @@ if (isset($_POST['btn_sbmt']))
     $cpw = $_POST['cpw'];
     $ut='customer';
 
-    if ($cpw == $pw)
-    {
-        try
-        {
-            $sql_query = "SELECT email from tb_customer WHERE email='$email'";
-            $sql = $conn->prepare($sql_query);
-            $sql->execute();
-            $numRows = $sql->fetchAll();
-
-            if(!(count($numRows)>0)){
-                $sql_query = "INSERT INTO tb_customer(fname,lname,email,address,pnum1,pnum2)
-		VALUES (:fname,:lname,:email,:address,:pnum1,:pnum2)";
-                $sql = $conn->prepare($sql_query);
-
-                $sql->bindParam(':fname',$fname);
-                $sql->bindParam(':lname',$lname);
-                $sql->bindParam(':email',$email);
-                $sql->bindParam(':address',$address);
-                $sql->bindParam(':pnum1',$pnum1);
-                $sql->bindParam(':pnum2',$pnum2);
-
-
-                $sql->execute();
-                // echo "Insert......";
-                $sql_query = "INSERT INTO db_users(username,password,user_type)
-		VALUES (:email,:pw,:ut)";
-                $sql = $conn->prepare($sql_query);
-
-                $sql->bindParam(':email',$email);
-                $sql->bindParam(':pw',$pw);
-                $sql->bindParam(':ut',$ut);
-
-                $sql->execute();
-                echo "<script type='text/javascript'>alert('User was Successfully registered in the System');</script>";
-            }
-            else{
-                echo "<script type='text/javascript'>alert('User Already Exist');</script>";
-
-            }
-
+    if (strlen($pnum1)>10 or strlen($pnum1)<10 or strlen($pnum2)>10 or strlen($pnum2)<10 or !is_numeric($pnum1) or  !is_numeric($pnum2) or strlen($pw)<6 ){
+        if (strlen(($pw)<6)){
+            echo "<script type='text/javascript'>alert('Password must contain more than 6 characters');</script>";
 
         }
-        catch (PDOException $e)
-        {
-            echo "Error Found</br>".$e->getMessage();
+        else {
+            echo "<script type='text/javascript'>alert('Telephone number should be 10 digits and should only contain numbers');</script>";
         }
     }
-    else
-    {
-        echo "<script type='text/javascript'>alert('Two Passwords have to be the same ');</script>";
+    else {
+
+        if ($cpw == $pw) {
+            try {
+                $sql_query = "SELECT email from tb_customer WHERE email='$email'";
+                $sql = $conn->prepare($sql_query);
+                $sql->execute();
+                $numRows = $sql->fetchAll();
+
+                if (!(count($numRows) > 0)) {
+                    $sql_query = "INSERT INTO tb_customer(fname,lname,email,address,pnum1,pnum2)
+            VALUES (:fname,:lname,:email,:address,:pnum1,:pnum2)";
+                    $sql = $conn->prepare($sql_query);
+
+                    $sql->bindParam(':fname', $fname);
+                    $sql->bindParam(':lname', $lname);
+                    $sql->bindParam(':email', $email);
+                    $sql->bindParam(':address', $address);
+                    $sql->bindParam(':pnum1', $pnum1);
+                    $sql->bindParam(':pnum2', $pnum2);
+
+
+                    $sql->execute();
+                    // echo "Insert......";
+                    $sql_query = "INSERT INTO db_users(username,password,user_type) 
+            VALUES (:email,:pw,:ut)";
+                    $sql = $conn->prepare($sql_query);
+
+                    $sql->bindParam(':email', $email);
+                    $sql->bindParam(':pw', $pw);
+                    $sql->bindParam(':ut', $ut);
+
+                    $sql->execute();
+                    echo "<script type='text/javascript'>alert('User was Successfully registered in the System');</script>";
+                } else {
+                    echo "<script type='text/javascript'>alert('User Already Exist');</script>";
+
+                }
+
+
+            } catch (PDOException $e) {
+                echo "Error Found</br>" . $e->getMessage();
+            }
+        } else {
+            echo "<script type='text/javascript'>alert('Two Passwords have to be the same ');</script>";
+        }
     }
-
-
-
-
-
 
 }
 ?>

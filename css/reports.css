@@ -8,7 +8,16 @@ select {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
-
+input[type=button]{
+    background-color: #2196f3;
+    color: white;
+    padding: 7px 10px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+    opacity: 0.9;
+}
 
 input[type=date]{
     width: 10%;
@@ -39,4 +48,19 @@ button {
   cursor: pointer;
   width: 10%;
   opacity: 0.9;
+}
+table, th, td {
+    border: 3px solid #E80E89;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+th{
+    color: #B93F90;
+}
+
+td{
+    color: #502F45;
 }
